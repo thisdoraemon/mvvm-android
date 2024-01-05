@@ -24,13 +24,10 @@ import com.example.counterviewmodel.ui.theme.CounterViewModelTheme
 
 class MainActivity : ComponentActivity() {
     private val counterViewModel: CounterViewModel by viewModels()
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             CounterViewModelTheme {
-                // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
@@ -51,10 +48,8 @@ fun CounterApp(counterViewModel: CounterViewModel) {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        // Display the counter value
         Text(text = "Count: ${counterViewModel.count}")
 
-        // Buttons to increment and decrement the count
         CounterButtons(counterViewModel = counterViewModel)
     }
 }

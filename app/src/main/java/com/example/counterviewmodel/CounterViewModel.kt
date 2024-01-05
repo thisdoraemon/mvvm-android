@@ -7,17 +7,15 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 
 class CounterViewModel: ViewModel() {
-    private var _count by remember {
-        mutableStateOf(0)
-    }
+    private var _count = mutableStateOf(0)
 
-    val count get() = _count
+    val count get()= _count.value
 
     fun increment() {
-        _count++
+        _count.value++
     }
 
     fun decrement() {
-        _count--
+        _count.value--
     }
 }
